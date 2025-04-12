@@ -1,0 +1,602 @@
+/* Reset root padding and width constraints for full-width layout */
+#root {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+/* App container - fill entire screen */
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content wrapper - adjust for GitHub style content width */
+.content-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 16px 8px;
+  }
+}
+
+/* Override text alignment for specific elements */
+#root ul,
+#root ol,
+#root li,
+#root .text-start {
+  text-align: left !important;
+}
+
+/* GitHub typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  color: var(--color-fg-default);
+}
+
+h1 {
+  font-size: 2rem;
+  border-bottom: 1px solid var(--color-border-muted);
+  padding-bottom: 0.3em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5em;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* GitHub card styling */
+.card {
+  border-radius: 6px;
+  border: 1px solid var(--color-border-default);
+  box-shadow: var(--color-shadow-small);
+  margin-bottom: 16px;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+/* GitHub style section dividers */
+.section-divider {
+  height: 1px;
+  background-color: var(--color-border-muted);
+  margin: 24px 0;
+}
+
+/* GitHub style header sections */
+.header-section {
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+/* Re-style Bootstrap components to match GitHub */
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 5px 16px;
+  line-height: 20px;
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  box-shadow: var(--color-btn-shadow);
+}
+
+/* GitHub style primary buttons */
+.btn-primary {
+  background-color: var(--color-btn-primary-bg);
+  color: #fff;
+  border-color: rgba(27, 31, 36, 0.15);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-btn-primary-hover-bg);
+}
+
+/* Custom video container */
+.video-container {
+  background-color: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  box-shadow: var(--color-shadow-medium);
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Recording indicator pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.recording-indicator {
+  animation: pulse 1.5s infinite;
+}
+
+/* Modal styling to match GitHub */
+.modal-content {
+  border-radius: 6px;
+  border: 1px solid var(--color-border-default);
+  box-shadow: var(--color-shadow-large);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--color-border-muted);
+  padding: 16px;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--color-border-muted);
+  padding: 16px;
+}
+
+.modal-body {
+  padding: 16px;
+}
+
+.btn-close {
+  opacity: 0.5;
+}
+
+.btn-close:hover {
+  opacity: 0.75;
+}
+
+/* Form styling to match GitHub */
+.form-control {
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-fg-default);
+  vertical-align: middle;
+  background-color: var(--color-bg-canvas);
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: var(--color-accent-fg);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-accent-muted);
+}
+
+/* GitHub table styles */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+table th {
+  font-weight: 600;
+  padding: 6px 13px;
+  border: 1px solid var(--color-border-default);
+  background-color: var(--color-bg-subtle);
+}
+
+table td {
+  padding: 6px 13px;
+  border: 1px solid var(--color-border-default);
+}
+
+/* GitHub style alerts */
+.alert {
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.alert-danger {
+  color: var(--color-danger-fg);
+  background-color: var(--color-scale-red-1);
+  border-color: var(--color-scale-red-3);
+}
+
+.alert-success {
+  color: var(--color-success-fg);
+  background-color: var(--color-scale-green-1);
+  border-color: var(--color-scale-green-3);
+}
+
+/* Fix for Bootstrap row/col spacing */
+.row {
+  --bs-gutter-x: 16px;
+}
+
+/* Override root text alignment for specific elements */
+#root ul,
+#root ol,
+#root li,
+#root .text-start {
+  text-align: left !important;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Enhanced typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  color: var(--color-fg-default);
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Card styling */
+.card {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-border-default);
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Custom styling for the app */
+
+/* Base styles */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header and subheading styles */
+.card-title, 
+.modal-title, 
+h2.fs-3, 
+h3.fs-5, 
+h3.h5, 
+h4.h6,
+.fw-semibold {
+  font-weight: 600 !important;
+  letter-spacing: -0.01em;
+}
+
+.fs-3 {
+  font-size: 1.5rem !important;
+}
+
+.fs-5, .h5 {
+  font-size: 1.125rem !important;
+}
+
+.h6 {
+  font-size: 0.875rem !important;
+}
+
+/* Dark mode adjustments for Bootstrap components */
+.dark .modal-content {
+  background-color: #1F2937;
+  color: #F9FAFB;
+  border-color: #374151;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.dark .modal-header,
+.dark .modal-footer {
+  border-color: #374151;
+}
+
+.dark .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.7;
+}
+
+.dark .btn-close:hover {
+  opacity: 1;
+}
+
+.dark .form-control {
+  background-color: #374151;
+  border-color: #4B5563;
+  color: #F9FAFB;
+}
+
+.dark .form-control:focus {
+  background-color: #374151;
+  border-color: #6366F1;
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+}
+
+.dark .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Improved button styles */
+.dark .btn-outline-light {
+  border-width: 2px;
+}
+
+.dark .btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Custom video container */
+.video-container {
+  background-color: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark mode toggle button animation */
+.dark-mode-toggle {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle svg {
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.dark-mode-toggle:hover svg {
+  transform: rotate(45deg);
+}
+
+/* Additional dark mode styles */
+.dark .navbar {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark .card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1F2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4B5563;
+  border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6B7280;
+}
+
+/* Fix dashboard entries alignment */
+.mb-0.small.text-gray-600 {
+  text-align: left;
+}
+
+/* Recording indicator pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.recording-indicator {
+  animation: pulse 1.5s infinite;
+}
+
+/* Style for the video preview modal */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-modal-content {
+  background-color: var(--color-bg-canvas);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(140, 149, 159, 0.2);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modal styling */
+.modal-content {
+  border-radius: 6px;
+  border: 1px solid var(--color-border-default);
+  box-shadow: 0 8px 24px rgba(140, 149, 159, 0.2);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--color-border-muted);
+  padding: 1rem;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--color-border-muted);
+  padding: 0.75rem 1rem;
+}
+
+.modal-body {
+  padding: 1rem;
+}
+
+.btn-close {
+  opacity: 0.5;
+}
+
+.btn-close:hover {
+  opacity: 0.75;
+}
+
+/* Form elements */
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-fg-default);
+}
+
+textarea.form-control {
+  min-height: 100px;
+}
+
+/* Dashboard and history items */
+.data-card {
+  border: 1px solid var(--color-border-muted);
+  border-radius: 6px;
+  padding: 16px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.data-card:hover {
+  box-shadow: 0 3px 6px rgba(140, 149, 159, 0.15);
+  border-color: var(--color-border-default);
+}
+
+/* Tooltip styling */
+.tooltip {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  max-width: 250px;
+}
+
+.tooltip-inner {
+  padding: 6px 10px;
+  background-color: var(--color-scale-gray-9);
+  border-radius: 6px;
+}
+
+/* Enhancing form group spacing */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Navigation active state indicator */
+.nav-link.active {
+  font-weight: 600;
+  color: var(--color-fg-default);
+}
+
+/* GitHub-style badges and labels */
+.badge {
+  display: inline-block;
+  padding: 0.15em 0.5em;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 2em;
+  border: 1px solid transparent;
+}
+
+.badge-primary {
+  background-color: var(--color-scale-blue-1);
+  color: var(--color-scale-blue-7);
+  border-color: var(--color-scale-blue-2);
+}
+
+.badge-success {
+  background-color: var(--color-scale-green-1);
+  color: var(--color-scale-green-7);
+  border-color: var(--color-scale-green-2);
+}

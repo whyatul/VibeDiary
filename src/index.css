@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* GitHub-inspired color palette */
+  --color-bg-canvas: #ffffff;
+  --color-bg-inset: #f6f8fa;
+  --color-bg-subtle: #f6f8fa;
+  --color-border-default: #d0d7de;
+  --color-border-muted: #d8dee4;
+  --color-border-subtle: #eaeef2;
+  --color-fg-default: #24292f;
+  --color-fg-muted: #57606a;
+  --color-fg-subtle: #6e7781;
+  --color-accent-fg: #0969da;
+  --color-accent-emphasis: #0550ae;
+  --color-accent-muted: #ddf4ff;
+  --color-success-fg: #1a7f37;
+  --color-danger-fg: #cf222e;
+  --color-danger-emphasis: #a40e26;
+  --color-neutral-muted: rgba(175, 184, 193, 0.2);
+  --color-btn-bg: #f6f8fa;
+  --color-btn-hover-bg: #f3f4f6;
+  --color-btn-active-bg: #ebecf0;
+  --color-btn-border: rgba(27, 31, 36, 0.15);
+  --color-btn-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+  --color-btn-primary-bg: #2da44e;
+  --color-btn-primary-hover-bg: #2c974b;
+  --color-btn-primary-selected-bg: #298e46;
+  --color-btn-primary-disabled-bg: #94d3a2;
+  --color-header-bg: #24292f;
+  --color-header-text: #ffffff;
+  
+  /* GitHub shadow variables */
+  --color-shadow-small: 0 1px 0 rgba(27, 31, 36, 0.04);
+  --color-shadow-medium: 0 3px 6px rgba(140, 149, 159, 0.15);
+  --color-shadow-large: 0 8px 24px rgba(140, 149, 159, 0.2);
+  --color-shadow-extra-large: 0 12px 48px rgba(140, 149, 159, 0.3);
+  
+  /* Other existing color variables */
+  --color-scale-gray-0: #f6f8fa;
+  --color-scale-gray-1: #eaeef2;
+  --color-scale-gray-2: #d0d7de;
+  --color-scale-gray-3: #afb8c1;
+  --color-scale-gray-4: #8c959f;
+  --color-scale-gray-5: #6e7781;
+  --color-scale-gray-6: #57606a;
+  --color-scale-gray-7: #424a53;
+  --color-scale-gray-8: #32383f;
+  --color-scale-gray-9: #24292f;
+  --color-scale-blue-1: #ddf4ff;
+  --color-scale-blue-2: #b6e3ff;
+  --color-scale-blue-3: #80ccff;
+  --color-scale-blue-4: #54aeff;
+  --color-scale-blue-5: #218bff;
+  --color-scale-blue-6: #0969da;
+  --color-scale-blue-7: #0550ae;
+  --color-scale-blue-8: #033d8b;
+  --color-scale-blue-9: #0a3069;
+  --color-scale-green-1: #dafbe1;
+  --color-scale-green-2: #aceebb;
+  --color-scale-green-3: #6fdd8b;
+  --color-scale-green-4: #4ac26b;
+  --color-scale-green-5: #2da44e;
+  --color-scale-green-6: #1a7f37;
+  --color-scale-green-7: #116329;
+  --color-scale-green-8: #044f1e;
+  --color-scale-green-9: #003d16;
+  --color-scale-red-1: #ffebe9;
+  --color-scale-red-2: #ffcecb;
+  --color-scale-red-3: #ffaba8;
+  --color-scale-red-4: #ff8182;
+  --color-scale-red-5: #fa4549;
+  --color-scale-red-6: #cf222e;
+  --color-scale-red-7: #a40e26;
+  --color-scale-red-8: #82061e;
+  --color-scale-red-9: #660018;
+  
+  /* Typography settings */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base styles */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--color-fg-default);
+  background-color: var(--color-bg-canvas);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* GitHub style focus outline */
+:focus {
+  outline: 2px solid var(--color-accent-fg);
+  outline-offset: 0;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Better scrollbars for modern browsers */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scale-gray-3);
+  border-radius: 5px;
+  border: 2px solid var(--color-bg-canvas);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scale-gray-4);
+}
+
+/* GitHub style animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner-border {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 0.2em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+/* GitHub utility classes */
+.color-fg-default { color: var(--color-fg-default); }
+.color-fg-muted { color: var(--color-fg-muted); }
+.color-fg-subtle { color: var(--color-fg-subtle); }
+.color-fg-accent { color: var(--color-accent-fg); }
+
+.bg-default { background-color: var(--color-bg-canvas); }
+.bg-subtle { background-color: var(--color-bg-subtle); }
+.bg-inset { background-color: var(--color-bg-inset); }
+
+/* Remove Bootstrap overrides that don't match GitHub */
+button, input, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Card styling */
+.card {
+  border-radius: 6px;
+  border: 1px solid var(--color-border-default);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  background-color: var(--color-bg-canvas);
+  color: var(--color-fg-default);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  border-color: var(--color-scale-gray-3);
+}
+
+/* Button styling */
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 5px 16px;
+  line-height: 20px;
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: color, background-color, border-color;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-fg);
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-accent-emphasis);
+}
+
+.btn-secondary {
+  background-color: var(--color-btn-bg);
+  border: 1px solid var(--color-btn-border);
+  color: var(--color-fg-default);
+  box-shadow: var(--color-btn-shadow);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--color-btn-hover-bg);
+  border-color: var(--color-btn-hover-border);
+}
+
+.btn-success {
+  background-color: var(--color-btn-primary-bg);
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn-success:hover:not(:disabled) {
+  background-color: var(--color-btn-primary-hover-bg);
+}
+
+.btn-danger {
+  color: var(--color-danger-fg);
+  background-color: var(--color-btn-bg);
+  border: 1px solid var(--color-btn-border);
+}
+
+.btn-danger:hover:not(:disabled) {
+  color: #fff;
+  background-color: var(--color-danger-emphasis);
+  border-color: var(--color-danger-emphasis);
+}
+
+/* Form controls */
+.form-control {
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  line-height: 20px;
+  padding: 5px 12px;
+  color: var(--color-fg-default);
+  background-color: var(--color-bg-canvas);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: var(--color-accent-fg);
+  box-shadow: 0 0 0 3px var(--color-accent-muted);
+  outline: none;
+}
+
+/* List styling */
+ul {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+li {
+  text-align: left;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* Alert styling */
+.alert {
+  border-radius: 6px;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+}
+
+.alert-danger {
+  color: var(--color-danger-fg);
+  background-color: var(--color-scale-red-1);
+  border-color: var(--color-scale-red-3);
+}
+
+/* Utility classes */
+.shadow-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Updated background and text color classes */
+.bg-gray-50 { background-color: var(--color-bg-subtle); }
+.bg-gray-100 { background-color: var(--color-scale-gray-0); }
+.bg-gray-200 { background-color: var(--color-scale-gray-1); }
+.bg-white { background-color: var(--color-bg-canvas); }
+
+.text-white { color: white; }
+.text-gray-500 { color: var(--color-scale-gray-5); }
+.text-gray-600 { color: var(--color-scale-gray-6); }
+.text-gray-700 { color: var(--color-scale-gray-7); }
+.text-gray-800 { color: var(--color-scale-gray-8); }
+
+.border-gray-200 { border-color: var(--color-border-default); }
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner-border {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 0.2em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
