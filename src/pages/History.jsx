@@ -179,11 +179,11 @@ const History = () => {
           
           {/* Video Grid */}
           {filteredVideos.length > 0 ? (
-            <Row>
+            <Row className="equal-height-cards">
               {filteredVideos.map(video => (
                 <Col md={6} lg={4} key={video.id} className="mb-4">
                   <Card 
-                    className="h-100 border-0 shadow-sm"
+                    className="border-0 shadow-sm"
                     style={{ cursor: 'pointer' }}
                   >
                     <div 
@@ -203,16 +203,18 @@ const History = () => {
                         <FaTrash />
                       </Button>
                     </div>
-                    <Card.Body onClick={() => setSelectedVideo(video)}>
+                    <Card.Body onClick={() => setSelectedVideo(video)} className="card-body-flex">
                       <h3 className="h5 mb-2 fw-semibold text-gray-800">{video.title}</h3>
                       <p className="mb-2 text-gray-500">
                         <small><FaCalendarAlt className="me-1" /> {video.createdAt}</small>
                       </p>
-                      <p className="text-gray-600 mb-0">
-                        {video.description && video.description.length > 100 
-                          ? `${video.description.substring(0, 100)}...` 
-                          : video.description}
-                      </p>
+                      <div className="card-content-wrapper">
+                        <p className="text-gray-600 mb-0">
+                          {video.description && video.description.length > 100 
+                            ? `${video.description.substring(0, 100)}...` 
+                            : video.description || 'No description provided.'}
+                        </p>
+                      </div>
                     </Card.Body>
                   </Card>
                 </Col>

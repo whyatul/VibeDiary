@@ -76,14 +76,14 @@ const Home = () => {
 
       <Container fluid style={{ maxWidth: '1280px', padding: '0 16px' }}>
         {/* What & Why Section */}
-        <Row className="mb-5">
+        <Row className="mb-5 equal-height-cards">
           <Col lg={6} className="mb-4">
             <Card style={{ 
               border: '1px solid var(--color-border-default)',
               borderRadius: '6px',
               boxShadow: 'var(--color-shadow-small)'
             }}>
-              <Card.Body style={{ padding: '24px' }}>
+              <Card.Body className="card-body-flex">
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
                   <div style={{ 
                     backgroundColor: 'var(--color-scale-blue-1)', 
@@ -104,19 +104,21 @@ const Home = () => {
                     color: 'var(--color-fg-default)'
                   }}>What is VideoJournal?</h2>
                 </div>
-                <p style={{ color: 'var(--color-fg-muted)', fontSize: '16px' }}>
-                  VideoJournal is a personal video journaling platform that allows you to:
-                </p>
-                <ul style={{ 
-                  color: 'var(--color-fg-default)',
-                  fontSize: '16px',
-                  paddingLeft: '24px'
-                }}>
-                  <li style={{ marginBottom: '8px' }}>Record your thoughts, ideas, and reflections through video</li>
-                  <li style={{ marginBottom: '8px' }}>Organize and review your past entries</li>
-                  <li style={{ marginBottom: '8px' }}>Track patterns in your mood and topics over time</li>
-                  <li>Gain insights through analytical tools</li>
-                </ul>
+                <div className="card-content-wrapper">
+                  <p style={{ color: 'var(--color-fg-muted)', fontSize: '16px' }}>
+                    VideoJournal is a personal video journaling platform that allows you to:
+                  </p>
+                  <ul style={{ 
+                    color: 'var(--color-fg-default)',
+                    fontSize: '16px',
+                    paddingLeft: '24px'
+                  }}>
+                    <li style={{ marginBottom: '8px' }}>Record your thoughts, ideas, and reflections through video</li>
+                    <li style={{ marginBottom: '8px' }}>Organize and review your past entries</li>
+                    <li style={{ marginBottom: '8px' }}>Track patterns in your mood and topics over time</li>
+                    <li>Gain insights through analytical tools</li>
+                  </ul>
+                </div>
               </Card.Body>
             </Card>
           </Col>
@@ -127,7 +129,7 @@ const Home = () => {
               borderRadius: '6px',
               boxShadow: 'var(--color-shadow-small)'
             }}>
-              <Card.Body style={{ padding: '24px' }}>
+              <Card.Body className="card-body-flex">
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
                   <div style={{ 
                     backgroundColor: 'var(--color-scale-green-1)', 
@@ -148,19 +150,21 @@ const Home = () => {
                     color: 'var(--color-fg-default)'
                   }}>Why Video Journal?</h2>
                 </div>
-                <p style={{ color: 'var(--color-fg-muted)', fontSize: '16px' }}>
-                  Video journaling offers unique benefits over traditional journaling:
-                </p>
-                <ul style={{ 
-                  color: 'var(--color-fg-default)',
-                  fontSize: '16px',
-                  paddingLeft: '24px'
-                }}>
-                  <li style={{ marginBottom: '8px' }}>Capture tone, emotion, and body language that text cannot</li>
-                  <li style={{ marginBottom: '8px' }}>Express yourself more naturally through speaking</li>
-                  <li style={{ marginBottom: '8px' }}>Create a more comprehensive record of your thoughts</li>
-                  <li>Look back on memories in a more immersive way</li>
-                </ul>
+                <div className="card-content-wrapper">
+                  <p style={{ color: 'var(--color-fg-muted)', fontSize: '16px' }}>
+                    Video journaling offers unique benefits over traditional journaling:
+                  </p>
+                  <ul style={{ 
+                    color: 'var(--color-fg-default)',
+                    fontSize: '16px',
+                    paddingLeft: '24px'
+                  }}>
+                    <li style={{ marginBottom: '8px' }}>Capture tone, emotion, and body language that text cannot</li>
+                    <li style={{ marginBottom: '8px' }}>Express yourself more naturally through speaking</li>
+                    <li style={{ marginBottom: '8px' }}>Create a more comprehensive record of your thoughts</li>
+                    <li>Look back on memories in a more immersive way</li>
+                  </ul>
+                </div>
               </Card.Body>
             </Card>
           </Col>
@@ -178,14 +182,14 @@ const Home = () => {
           }}>How It Works</h2>
         </div>
         
-        <Row className="mb-5">
+        <Row className="mb-5 equal-height-cards">
           <Col md={4} className="mb-4">
             <Card style={{ 
               border: '1px solid var(--color-border-default)',
               borderRadius: '6px',
               textAlign: 'center'
             }}>
-              <Card.Body style={{ padding: '24px' }}>
+              <Card.Body className="card-body-flex">
                 <div style={{ 
                   backgroundColor: 'var(--color-scale-blue-1)',
                   borderRadius: '50%',
@@ -204,12 +208,14 @@ const Home = () => {
                   marginBottom: '16px',
                   color: 'var(--color-fg-default)'
                 }}>Record</h3>
-                <p style={{ 
-                  color: 'var(--color-fg-muted)',
-                  fontSize: '16px'
-                }}>
-                  Record your video journal entries with a simple click. Add a title and description to organize your thoughts.
-                </p>
+                <div className="card-content-wrapper">
+                  <p style={{ 
+                    color: 'var(--color-fg-muted)',
+                    fontSize: '16px'
+                  }}>
+                    Record your video journal entries with a simple click. Add a title and description to organize your thoughts.
+                  </p>
+                </div>
               </Card.Body>
             </Card>
           </Col>
@@ -220,7 +226,7 @@ const Home = () => {
               borderRadius: '6px',
               textAlign: 'center'
             }}>
-              <Card.Body style={{ padding: '24px' }}>
+              <Card.Body className="card-body-flex">
                 <div style={{ 
                   backgroundColor: 'var(--color-scale-blue-1)',
                   borderRadius: '50%',
@@ -239,12 +245,14 @@ const Home = () => {
                   marginBottom: '16px',
                   color: 'var(--color-fg-default)'
                 }}>Review</h3>
-                <p style={{ 
-                  color: 'var(--color-fg-muted)',
-                  fontSize: '16px'
-                }}>
-                  Access your past journal entries anytime. See your growth and changes over time.
-                </p>
+                <div className="card-content-wrapper">
+                  <p style={{ 
+                    color: 'var(--color-fg-muted)',
+                    fontSize: '16px'
+                  }}>
+                    Access your past journal entries anytime. See your growth and changes over time.
+                  </p>
+                </div>
               </Card.Body>
             </Card>
           </Col>
@@ -255,7 +263,7 @@ const Home = () => {
               borderRadius: '6px',
               textAlign: 'center'
             }}>
-              <Card.Body style={{ padding: '24px' }}>
+              <Card.Body className="card-body-flex">
                 <div style={{ 
                   backgroundColor: 'var(--color-scale-blue-1)',
                   borderRadius: '50%',
@@ -274,12 +282,14 @@ const Home = () => {
                   marginBottom: '16px',
                   color: 'var(--color-fg-default)'
                 }}>Analyze</h3>
-                <p style={{ 
-                  color: 'var(--color-fg-muted)',
-                  fontSize: '16px'
-                }}>
-                  Gain insights from your journaling patterns with our dashboard analytics.
-                </p>
+                <div className="card-content-wrapper">
+                  <p style={{ 
+                    color: 'var(--color-fg-muted)',
+                    fontSize: '16px'
+                  }}>
+                    Gain insights from your journaling patterns with our dashboard analytics.
+                  </p>
+                </div>
               </Card.Body>
             </Card>
           </Col>

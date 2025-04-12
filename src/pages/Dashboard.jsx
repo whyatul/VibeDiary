@@ -291,13 +291,13 @@ const Dashboard = () => {
       ) : (
         <>
           {/* Stats Cards */}
-          <Row className="mb-4 mx-0">
+          <Row className="mb-4 mx-0 equal-height-cards">
             <Col md={4} className="mb-3 px-2">
-              <Card className="h-100 border-0 shadow-sm">
+              <Card className="border-0 shadow-sm">
                 <Card.Body className="d-flex align-items-center p-4">
                   <div 
                     className="rounded-circle me-4 d-flex align-items-center justify-content-center bg-blue-100" 
-                    style={{width: "70px", height: "70px"}}
+                    style={{width: "70px", height: "70px", flexShrink: 0}}
                   >
                     <FaVideo size={28} className="text-blue-600" />
                   </div>
@@ -310,11 +310,11 @@ const Dashboard = () => {
             </Col>
             
             <Col md={4} className="mb-3 px-2">
-              <Card className="h-100 border-0 shadow-sm">
+              <Card className="border-0 shadow-sm">
                 <Card.Body className="d-flex align-items-center p-4">
                   <div 
                     className="rounded-circle me-4 d-flex align-items-center justify-content-center bg-green-100" 
-                    style={{width: "70px", height: "70px"}}
+                    style={{width: "70px", height: "70px", flexShrink: 0}}
                   >
                     <FaCalendar size={28} className="text-green-600" />
                   </div>
@@ -327,11 +327,11 @@ const Dashboard = () => {
             </Col>
             
             <Col md={4} className="mb-3 px-2">
-              <Card className="h-100 border-0 shadow-sm">
+              <Card className="border-0 shadow-sm">
                 <Card.Body className="d-flex align-items-center p-4">
                   <div 
                     className="rounded-circle me-4 d-flex align-items-center justify-content-center bg-purple-100" 
-                    style={{width: "70px", height: "70px"}}
+                    style={{width: "70px", height: "70px", flexShrink: 0}}
                   >
                     <FaClock size={28} className="text-purple-600" />
                   </div>
@@ -388,11 +388,11 @@ const Dashboard = () => {
             </Col>
           </Row>
           
-          <Row className="mb-4 mx-0">
+          <Row className="mb-4 mx-0 equal-height-cards">
             {/* Weekly Activity Chart */}
             <Col md={6} className="mb-4 px-2">
-              <Card className="h-100 border-0 shadow-sm">
-                <Card.Body className="p-4">
+              <Card className="border-0 shadow-sm">
+                <Card.Body className="card-body-flex p-4">
                   <div className="d-flex justify-content-between align-items-center mb-4">
                     <h3 className="h5 mb-0 fw-semibold fs-5 text-gray-800">Weekly Activity</h3>
                     <div className="px-3 py-1 rounded bg-gray-100">
@@ -427,8 +427,8 @@ const Dashboard = () => {
             
             {/* Sentiment Chart */}
             <Col md={6} className="mb-4 px-2">
-              <Card className="h-100 border-0 shadow-sm">
-                <Card.Body className="p-4">
+              <Card className="border-0 shadow-sm">
+                <Card.Body className="card-body-flex p-4">
                   <div className="d-flex justify-content-between align-items-center mb-4">
                     <h3 className="h5 mb-0 fw-semibold fs-5 text-gray-800">Mood Analysis</h3>
                     <div className="px-3 py-1 rounded bg-gray-100">
