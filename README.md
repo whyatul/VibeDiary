@@ -1,4 +1,4 @@
-## 📝 VibeDiary
+## 📝 Vibe Diary
 
 Using a machine learning model designed to analyze the **sentiment** of diary-style text entries. This model helps users understand their emotional tone over time by classifying entries as **positive**, **negative**, or **neutral**.
 
@@ -19,19 +19,79 @@ Using a machine learning model designed to analyze the **sentiment** of diary-st
 
 ```bash
 git clone https://github.com/your-username/VibeDiary.git
-cd Vibediary
+cd VibeDiary
 ```
+
+---
+
+## 🛠️ Technology Stack
+
+### Frontend
+* **React.js** - Modern UI library for building interactive interfaces
+* **Vite** - Fast build tool and development server
+* **Tailwind CSS** - Utility-first CSS framework for styling
+* **Firebase** - Backend-as-a-Service for authentication and data storage
+* **ESLint** - Code linting and formatting
+
+### Backend & ML
+* **Python 3.7+** - Core programming language for ML
+* **Scikit-learn / TensorFlow / PyTorch** - Machine learning frameworks
+* **NLTK / spaCy** - Natural language processing libraries
+* **Pandas / NumPy** - Data manipulation and analysis
+* **Jupyter Notebooks** - Interactive development and experimentation
+
+### Development Tools
+* **Git** - Version control
+* **PostCSS** - CSS processing
+* **npm/yarn** - Package management for frontend
 
 ---
 
 ## 🛠️ Installation
 
-Make sure you have Python 3.7+ installed.
+### Prerequisites
+* **Node.js 16+** and **npm** (for React frontend)
+* **Python 3.7+** (for ML backend)
 
-Install dependencies using:
+### Frontend Setup
 
+1. Install frontend dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+npm run dev
+```
+
+### Backend Setup
+
+1. Navigate to the ML directory:
+```bash
+cd diary_analysis
+```
+
+2. Install Python dependencies:
 ```bash
 pip install -r requirements.txt
+```
+
+3. Run the ML backend:
+```bash
+python main.py
+```
+
+### Full Stack Development
+
+For full-stack development, run both servers concurrently:
+
+```bash
+# Terminal 1 - Frontend
+npm run dev
+
+# Terminal 2 - Backend
+cd diary_analysis && python main.py
 ```
 
 ---
@@ -40,17 +100,94 @@ pip install -r requirements.txt
 
 ```
 📦 VibeDiary/
-├── data/               # Sample or training data
-├── models/             # Saved models
-├── notebooks/          # Jupyter notebooks for exploration
-├── src/                # Core model code
-│   ├── preprocess.py   # Text cleaning & tokenization
-│   ├── train.py        # Training script
-│   ├── predict.py      # Inference script
-│   └── utils.py        # Helper functions
-├── app.py              # Optional: Streamlit or Flask app
-├── README.md
-└── requirements.txt
+├── 🎨 Frontend (React.js)
+│   ├── public/                 # Static files
+│   │   ├── vite.svg           # Vite logo
+│   │   └── index.html         # HTML template
+│   ├── src/                   # React source code
+│   │   ├── components/        # Reusable UI components
+│   │   │   └── Navbar.jsx     # Navigation component
+│   │   ├── pages/             # Page components
+│   │   │   ├── Home.jsx       # Landing page
+│   │   │   ├── Dashboard.jsx  # Main dashboard
+│   │   │   ├── Record.jsx     # Diary entry recording
+│   │   │   └── History.jsx    # Entry history & analytics
+│   │   ├── context/           # React context providers
+│   │   │   └── ThemeContext.jsx # Theme management
+│   │   ├── hooks/             # Custom React hooks
+│   │   │   └── useVideoRecorder.js # Video recording hook
+│   │   ├── firebase/          # Firebase configuration
+│   │   │   └── config.js      # Firebase setup
+│   │   ├── assets/            # Static assets
+│   │   │   └── react.svg      # React logo
+│   │   ├── App.jsx            # Main App component
+│   │   ├── App.css            # App styles
+│   │   ├── main.jsx           # React entry point
+│   │   └── index.css          # Global styles
+│   ├── package.json           # Frontend dependencies
+│   ├── package-lock.json      # Lock file
+│   ├── vite.config.js         # Vite configuration
+│   ├── tailwind.config.js     # Tailwind CSS config
+│   ├── postcss.config.js      # PostCSS config
+│   ├── eslint.config.js       # ESLint configuration
+│   └── index.html             # Entry HTML file
+│
+├── 🧠 ML Backend (Python)
+│   └── diary_analysis/        # Machine Learning module
+│       ├── data/              # Training & sample data
+│       ├── models/            # Saved ML models
+│       ├── notebooks/         # Jupyter notebooks for exploration
+│       ├── src/               # Core ML code
+│       │   ├── preprocess.py  # Text cleaning & tokenization
+│       │   ├── train.py       # Model training script
+│       │   ├── predict.py     # Sentiment prediction
+│       │   └── utils.py       # Helper functions
+│       └── main.py            # Main ML application entry
+│
+├── �️ Database Structure (Firebase Firestore)
+│   ├── users/                 # User collection
+│   │   └── {userId}/          # Individual user document
+│   │       ├── profile        # User profile data
+│   │       ├── settings       # User preferences & settings
+│   │       └── entries/       # Sub-collection of diary entries
+│   │           └── {entryId}/ # Individual entry document
+│   │               ├── content         # Entry text content
+│   │               ├── timestamp       # Creation date/time
+│   │               ├── sentiment       # ML analysis results
+│   │               ├── confidence      # Sentiment confidence score
+│   │               ├── mood_tags       # User-selected mood tags
+│   │               ├── media_urls      # Video/audio recordings
+│   │               └── metadata        # Additional entry data
+│   │
+│   ├── analytics/             # Analytics collection
+│   │   └── {userId}/          # User-specific analytics
+│   │       ├── daily_stats    # Daily mood summaries
+│   │       ├── weekly_trends  # Weekly sentiment trends
+│   │       ├── monthly_summary # Monthly analysis
+│   │       └── patterns       # Detected emotional patterns
+│   │
+│   └── app_data/              # Application-wide data
+│       ├── sentiment_models   # ML model metadata
+│       ├── mood_categories    # Predefined mood categories
+│       └── app_settings       # Global app configuration
+│
+├── 🗄️ Alternative Database Schemas
+│   ├── PostgreSQL/            # Relational database option
+│   │   ├── schema.sql         # Database schema definition
+│   │   ├── migrations/        # Database migration files
+│   │   ├── seeds/             # Sample data for development
+│   │   └── queries/           # Common SQL queries
+│   │
+│   └── MongoDB/               # NoSQL document database option
+│       ├── schemas/           # Mongoose schemas
+│       ├── collections.js     # Collection definitions
+│       └── indexes.js         # Database indexes
+│
+├── �📄 Configuration & Documentation
+│   ├── .git/                  # Git repository
+│   ├── .gitignore            # Git ignore rules
+│   ├── README.md             # Project documentation
+│   └── requirements.txt      # Python dependencies (to be created)
 ```
 
 ---
@@ -91,13 +228,30 @@ print(f"Sentiment: {label} (Confidence: {confidence:.2f})")
 
 ## 🖥️ Deployment
 
-You can run the app locally using Streamlit:
+### Frontend Deployment
+Build and deploy the React app:
 
 ```bash
-streamlit run app.py
+npm run build
 ```
 
-Or deploy to platforms like **Heroku**, **Render**, or **Hugging Face Spaces**.
+Deploy to platforms like:
+* **Vercel** - Recommended for React apps
+* **Netlify** - Static site hosting
+* **Firebase Hosting** - Google's hosting platform
+
+### Backend Deployment
+Deploy the ML backend to:
+* **Heroku** - Easy Python app deployment
+* **Railway** - Modern deployment platform
+* **Google Cloud Platform** - Scalable cloud hosting
+* **AWS EC2** - Amazon's cloud computing platform
+
+### Full-Stack Deployment
+For complete deployment, consider:
+* **Docker containers** for consistent environments
+* **Kubernetes** for orchestration
+* **CI/CD pipelines** with GitHub Actions
 
 ---
 
