@@ -18,8 +18,8 @@ Using a machine learning model designed to analyze the **sentiment** of diary-st
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/diary-sentiment-analysis.git
-cd diary-sentiment-analysis
+git clone https://github.com/your-username/VibeDiary.git
+cd Vibediary
 ```
 
 ---
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 ## 📂 Project Structure
 
 ```
-📦 diary-sentiment-analysis/
+📦 VibeDiary/
 ├── data/               # Sample or training data
 ├── models/             # Saved models
 ├── notebooks/          # Jupyter notebooks for exploration
